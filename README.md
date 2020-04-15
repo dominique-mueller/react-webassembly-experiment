@@ -10,9 +10,37 @@ Using **[WebAssembly](https://developer.mozilla.org/en-US/docs/WebAssembly)** in
 
 <br><br>
 
-## How to make WebAssembly work in a TypeScript React app
+## How to use WebAssembly modules in a TypeScript React app
 
-TODO
+This repository shows the simplest use case, meaning that a compiled `.wasm` file already exists.
+
+<br>
+
+### Provide the WebAssembly module
+
+Depending on your use case, various ways exist to provide your WebAssembly module to the application:
+
+- IF you only use the WebAssembly module in your application, place the `.wasm` file somewhere into your `public` folder, e.g. `public/wasm`
+- IF you intend to use the same WebAssembly module across multiple different applications, or want to decouple it from any specific
+  applications, you can also serve your `.wasm` file from any URL
+
+<br>
+
+### Use the WebAssembly module
+
+Fetch and instantiate the module:
+
+```ts
+// Load module
+// Note: You might lazy-load and instantiate the module only once actually needed (#perfmatters)
+const MyWasmModule = await WebAssembly.instantiateStreaming(fetch('./wasm/my-module.wasm'));
+const MyWasmModuleInstance = AddModule.instance.exports as any;
+
+// Use the module
+const result = MyWasmModuleInstance.doSomething(inputA, inputB);
+```
+
+> This project contains an example WASM module that adds two numbers together (see `./public/wasm/add.wasm`).
 
 <br><br>
 
