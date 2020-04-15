@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  useEffect(() => {
+    (async () => {
+      // Load module
+      const AddModule = await WebAssembly.instantiateStreaming(fetch('./wasm/add.wasm'));
+      const AddModuleInstance = AddModule.instance.exports as any;
+
+      // Run calculation
+      const result = AddModuleInstance.add(12, 30);
+      console.log(result);
+    })();
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
