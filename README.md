@@ -1,6 +1,6 @@
 <div align="center">
 
-# create-react-app-webassembly-experiment
+# react-webassembly-experiment
 
 Using **[WebAssembly](https://developer.mozilla.org/en-US/docs/WebAssembly)** in a
 **[TypeScript](https://github.com/microsoft/TypeScript)** **[React](https://github.com/facebook/react)** app, based on

@@ -1,11 +1,11 @@
 {
-  "name": "create-react-app-webassembly-experiment",
+  "name": "react-webassembly-experiment",
   "version": "1.0.0",
-  "description": "Create React App - WebAssembly Experiment",
+  "description": "Using WebAssembly in a TypeScript React app, based on create-react-app",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/dominique-mueller/create-react-app-webassembly-experiment"
+    "url": "https://github.com/dominique-mueller/react-webassembly-experiment"
   },
   "scripts": {
     "start": "react-scripts start",
