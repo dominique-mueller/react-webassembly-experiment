@@ -2,16 +2,18 @@ import React, { useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+const App = () => {
   useEffect(() => {
     (async () => {
       // Load module
+      console.log('Loading wasm ...');
       const AddModule = await WebAssembly.instantiateStreaming(fetch('./wasm/add.wasm'));
       const AddModuleInstance = AddModule.instance.exports as any;
 
       // Run calculation
+      console.log('Running calculation ...');
       const result = AddModuleInstance.add(12, 30);
-      console.log(result);
+      console.log('Result:', result);
     })();
   }, []);
 
@@ -28,6 +30,6 @@ function App() {
       </header>
     </div>
   );
-}
+};
 
 export default App;

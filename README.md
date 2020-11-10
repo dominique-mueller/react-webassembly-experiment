@@ -14,6 +14,8 @@ Using **[WebAssembly](https://developer.mozilla.org/en-US/docs/WebAssembly)** in
 
 This repository shows the simplest use case, meaning that a compiled `.wasm` file already exists.
 
+> Testing is out of scope, mocking might be required.
+
 <br>
 
 ### Provide the WebAssembly module
